@@ -1,0 +1,136 @@
+@import 'tailwindcss';
+@import 'katex/dist/katex.min.css';
+
+@theme {
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, serif;
+
+  --color-ink: #0f1b2d;
+  --color-ink-2: #2a3446;
+  --color-muted: #5b6577;
+  --color-faint: #8a93a3;
+  --color-line: #e3e8f2;
+  --color-line-2: #d3dbea;
+  --color-wash: #f2f5fd;
+  --color-wash-2: #e8eefc;
+  --color-paper: #ffffff;
+  --color-blue: #4288ff;
+  --color-blue-600: #2c6fe6;
+  --color-blue-700: #1f56bd;
+  --color-blue-50: #eef4ff;
+  --color-blue-100: #dbe8ff;
+  --color-tension: #e59a2f;
+  --color-tension-50: #fdf4e6;
+  --color-ok: #149a6a;
+  --color-ok-50: #e7f6ef;
+  --color-err: #d9434a;
+  --color-err-50: #fcecec;
+
+  --radius-card: 14px;
+  --shadow-soft: 0 1px 2px rgba(15, 27, 45, 0.04), 0 8px 24px -12px rgba(15, 27, 45, 0.12);
+  --shadow-lift: 0 1px 2px rgba(15, 27, 45, 0.05), 0 24px 48px -24px rgba(31, 86, 189, 0.28);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-paper font-sans text-ink;
+  font-feature-settings: 'ss01', 'cv11';
+}
+::selection {
+  background: var(--color-blue-100);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Sorty's voice: always serif, always blue. The type itself tells you who is speaking. */
+.sorty {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-blue-700);
+  line-height: 1.55;
+}
+
+.katex {
+  font-size: 1.04em;
+}
+.sorty .katex {
+  font-style: normal;
+}
+
+/* ruled notebook paper for the solve surface */
+.paper {
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, transparent 31px, #eef2fa 31px, #eef2fa 32px);
+  background-size: 100% 32px;
+}
+
+.hero-wash {
+  background:
+    radial-gradient(1200px 500px at 85% -10%, #dfe9ff 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, #eef3ff 0%, transparent 60%), #f7f9fe;
+}
+
+.note-mark {
+  background: linear-gradient(transparent 62%, rgba(66, 136, 255, 0.16) 62%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d6ddeb;
+  border-radius: 8px;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  background: transparent;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-wash-2);
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-blue);
+  box-shadow: 0 1px 3px rgba(15, 27, 45, 0.2);
+}
+input[type='range']::-moz-range-track {
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-wash-2);
+}
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-blue);
+}
