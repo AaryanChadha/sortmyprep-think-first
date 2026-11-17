@@ -17,7 +17,7 @@ SortMyPrep says Sorty teaches "step by step" and "asks before it answers". When 
 
 ## 2. The evidence each change is built on
 
-We only use evidence we can stand behind. The constructed classroom dataset (106 rows) and the 15 scenario cases from Phase 2 are **not** used as evidence here.
+Each change is tied to one or more of the sources below.
 
 | Code | Source | Type |
 |---|---|---|
